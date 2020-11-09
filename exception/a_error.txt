@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "E:\pythonfile\exception\mypyexcep_03.py", line 14, in <module>
+    a['salary']
+KeyError: 'salary'
