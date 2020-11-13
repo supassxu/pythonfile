@@ -11,6 +11,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -31,15 +36,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/exception" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ebaoProject" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pythonfile\gui" />
       <recent name="E:\pythonfile\exception" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mypyexecp_05">
-    <configuration name="mypyexcep_01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.mypygui_08">
+    <configuration name="mypygui_06" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonfile" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -47,11 +54,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exception" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exception/mypyexcep_01.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui/mypygui_06.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -60,7 +67,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mypyexcep_02" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mypygui_07" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonfile" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,11 +75,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exception" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exception/mypyexcep_02.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui/mypygui_07.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,7 +88,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mypyexcep_03" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mypygui_08" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonfile" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,11 +96,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exception" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exception/mypyexcep_03.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui/mypygui_08.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -102,7 +109,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mypyexecp_04" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="testturtle1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonfile" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -110,11 +117,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exception" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exception/mypyexecp_04.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/testturtle1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,7 +130,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mypyexecp_05" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="trutleChessboard" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonfile" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,11 +138,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exception" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exception/mypyexecp_05.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/trutleChessboard.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.mypyexecp_05" />
-        <item itemvalue="Python.mypyexcep_03" />
-        <item itemvalue="Python.mypyexecp_04" />
-        <item itemvalue="Python.mypyexcep_02" />
-        <item itemvalue="Python.mypyexcep_01" />
+        <item itemvalue="Python.mypygui_08" />
+        <item itemvalue="Python.trutleChessboard" />
+        <item itemvalue="Python.testturtle1" />
+        <item itemvalue="Python.mypygui_07" />
+        <item itemvalue="Python.mypygui_06" />
       </list>
     </recent_temporary>
   </component>
@@ -212,47 +219,76 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604928835119">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
     <state x="463" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1464.864@0.0.1464.864" timestamp="1604928835119" />
-    <state width="814" height="207" key="GridCell.Tab.0.bottom" timestamp="1604933786490">
+    <state x="513" y="187" key="FileChooserDialogImpl" timestamp="1605096219730">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
-    <state width="814" height="207" key="GridCell.Tab.0.bottom/0.0.1464.864@0.0.1464.864" timestamp="1604933786490" />
-    <state width="814" height="207" key="GridCell.Tab.0.center" timestamp="1604933786489">
+    <state x="513" y="187" key="FileChooserDialogImpl/0.0.1464.864@0.0.1464.864" timestamp="1605096219730" />
+    <state width="1443" height="200" key="GridCell.Tab.0.bottom" timestamp="1605193303284">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
-    <state width="814" height="207" key="GridCell.Tab.0.center/0.0.1464.864@0.0.1464.864" timestamp="1604933786489" />
-    <state width="814" height="207" key="GridCell.Tab.0.left" timestamp="1604933786489">
+    <state width="1443" height="200" key="GridCell.Tab.0.bottom/0.0.1464.864@0.0.1464.864" timestamp="1605193303284" />
+    <state width="1443" height="200" key="GridCell.Tab.0.center" timestamp="1605193303284">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
-    <state width="814" height="207" key="GridCell.Tab.0.left/0.0.1464.864@0.0.1464.864" timestamp="1604933786489" />
-    <state width="814" height="207" key="GridCell.Tab.0.right" timestamp="1604933786489">
+    <state width="1443" height="200" key="GridCell.Tab.0.center/0.0.1464.864@0.0.1464.864" timestamp="1605193303284" />
+    <state width="1443" height="200" key="GridCell.Tab.0.left" timestamp="1605193303284">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
-    <state width="814" height="207" key="GridCell.Tab.0.right/0.0.1464.864@0.0.1464.864" timestamp="1604933786489" />
-    <state width="814" height="204" key="GridCell.Tab.1.bottom" timestamp="1604932466569">
+    <state width="1443" height="200" key="GridCell.Tab.0.left/0.0.1464.864@0.0.1464.864" timestamp="1605193303284" />
+    <state width="1443" height="200" key="GridCell.Tab.0.right" timestamp="1605193303284">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
-    <state width="814" height="204" key="GridCell.Tab.1.bottom/0.0.1464.864@0.0.1464.864" timestamp="1604932466569" />
-    <state width="814" height="204" key="GridCell.Tab.1.center" timestamp="1604932466569">
+    <state width="1443" height="200" key="GridCell.Tab.0.right/0.0.1464.864@0.0.1464.864" timestamp="1605193303284" />
+    <state width="814" height="204" key="GridCell.Tab.1.bottom" timestamp="1604934414300">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
-    <state width="814" height="204" key="GridCell.Tab.1.center/0.0.1464.864@0.0.1464.864" timestamp="1604932466569" />
-    <state width="814" height="204" key="GridCell.Tab.1.left" timestamp="1604932466569">
+    <state width="814" height="204" key="GridCell.Tab.1.bottom/0.0.1464.864@0.0.1464.864" timestamp="1604934414300" />
+    <state width="814" height="204" key="GridCell.Tab.1.center" timestamp="1604934414300">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
-    <state width="814" height="204" key="GridCell.Tab.1.left/0.0.1464.864@0.0.1464.864" timestamp="1604932466569" />
-    <state width="814" height="204" key="GridCell.Tab.1.right" timestamp="1604932466569">
+    <state width="814" height="204" key="GridCell.Tab.1.center/0.0.1464.864@0.0.1464.864" timestamp="1604934414300" />
+    <state width="814" height="204" key="GridCell.Tab.1.left" timestamp="1604934414300">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
-    <state width="814" height="204" key="GridCell.Tab.1.right/0.0.1464.864@0.0.1464.864" timestamp="1604932466569" />
+    <state width="814" height="204" key="GridCell.Tab.1.left/0.0.1464.864@0.0.1464.864" timestamp="1604934414300" />
+    <state width="814" height="204" key="GridCell.Tab.1.right" timestamp="1604934414300">
+      <screen x="0" y="0" width="1464" height="864" />
+    </state>
+    <state width="814" height="204" key="GridCell.Tab.1.right/0.0.1464.864@0.0.1464.864" timestamp="1604934414300" />
+    <state x="234" y="77" key="SettingsEditor" timestamp="1605096091423">
+      <screen x="0" y="0" width="1464" height="864" />
+    </state>
+    <state x="234" y="77" key="SettingsEditor/0.0.1464.864@0.0.1464.864" timestamp="1605096091423" />
+    <state x="613" y="345" key="VCS.EditChangelistDialog" timestamp="1605193277449">
+      <screen x="0" y="0" width="1464" height="864" />
+    </state>
+    <state x="613" y="345" key="VCS.EditChangelistDialog/0.0.1464.864@0.0.1464.864" timestamp="1605193277449" />
     <state x="537" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604928614944">
       <screen x="0" y="0" width="1464" height="864" />
     </state>
     <state x="537" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1464.864@0.0.1464.864" timestamp="1604928614944" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/exception/mypyexecp_05.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/exception/mypyexecp_05.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
