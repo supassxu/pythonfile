@@ -3,5 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/file/a.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/file/a/a.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/file/b.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/file/未命名.1txt.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/file/未命名.txt" charset="GBK" />
   </component>
 </project>
