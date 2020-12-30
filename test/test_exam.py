@@ -156,8 +156,10 @@ def test_exam_09():
 
 def test_exam_10():
     time.sleep(1)
-    print(time.localtime())
-    # print(time.tm_year))
+    # 格式化成2016-03-20 11:45:39形式
+    print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+    # 格式化成Sat Mar 28 22:24:24 2016形式
+    print(time.strftime("%a %b %d %H:%M:%S %Y", time.localtime()))
 
 
 '''11、古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？'''
