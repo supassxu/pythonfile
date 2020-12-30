@@ -1,4 +1,6 @@
 '''1、有四个数字：1、2、3、4，能组成多少个互不相同且无重复数字的三位数？各是多少？'''
+import math
+import time
 
 
 def test_exam_01():
@@ -45,13 +47,13 @@ def test_exam_02x():
     for i in range(len(b)):
         if i != len(a):
             if s <= a[i]:
-                total += (s-a[i-1]) * b[i]
+                total += (s - a[i - 1]) * b[i]
                 break
             else:
                 if i == 0:
                     total += a[i] * b[i]
                 elif i < len(a):
-                    total += (a[i] - a[i-1]) * b[i]
+                    total += (a[i] - a[i - 1]) * b[i]
         else:
             total += (s - a[-1]) * b[i]
     print("输入的当月利润是%.2f万元，计算出来的发放奖金总数为%.2f万元" % (s, total))
@@ -61,24 +63,103 @@ def test_exam_02x():
 
 
 def test_exam_03():
-    x = 0
-    a = [0,1,4,9,16,25,36,49,64,81,100,121,144,169,196,225,256,289,324,361,400]
     for i in range(1000):
-        for h in range(len(a)):
-            if x + 100 == a[h]:
-                for j in range(len(a)):
-                    if x + 168 == a[j]:
+        for h in range(1000):
+            if i + 100 == math.pow(h, 2):
+                for j in range(1000):
+                    if i + 168 == math.pow(j, 2):
+                        print(str(i) + " + 100 = " + str(h) + "^2")
+                        print(str(i) + " + 168 = " + str(j) + "^2")
                         print(i)
                         break
 
 
 '''4、输入某年某月某日，判断这一天是这一年的第几天？'''
+
+
+def test_exam_04():
+    str1 = input("输入某年某月某日格式为{年-月-日}，程序判断这一天是这一年的第几天？\n").split("-")
+    x = list(map(int, str1))
+    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    total = 0
+    if x[1] == 1:
+        total = x[2]
+    elif 1 < x[1] < 13:
+        total += x[2]
+        for i in range(x[1] - 1):
+            total += days[i]
+        if x[0] % 4 == 0 and x[0] % 100 != 0:
+            total += 1
+    else:
+        print("输入的月份不规范，请重新执行程序！")
+    print(total)
+    print("输入的日期为：{0}年{1}月{2}日，这一天是这一年的第{3}天。".format(str1[0], str1[1], str1[2], str(total)))
+
+
 '''5、输入三个整数x,y,z，请把这三个数由小到大输出。'''
+
+
+def test_exam_05():
+    str1 = input("输入三个整数x，y，z以空格隔开，程序将把这3个数有小到大输出。\n").split(" ")
+    x = list(map(int, str1))
+    x.sort()
+    print(x)
+
+
 '''6、斐波那契数列。'''
+
+
+def test_exam_06():
+    x = int(input("请输入整数x，程序将输出长度为x的斐波那契数列。\n"))
+    list_x = [0, 1]
+    for i in range(2, x):
+        list_x.append(list_x[i-2] + list_x[i-1])
+    print("长度为{0}的斐波那切数列如下：".format(str(x)))
+    print(list_x)
+
+
 '''7、将一个列表的数据复制到另一个列表中。'''
+
+
+def test_exam_07():
+    x = int(input("请输入整数x，程序将输出长度为x的斐波那契数列。\n"))
+    list_x = [0, 1]
+    for i in range(2, x):
+        list_x.append(list_x[i - 2] + list_x[i - 1])
+    list_y = list_x[0:20:2]
+    print(list_y)
+
+
 '''8、输出 9*9 乘法口诀表。'''
+
+
+def test_exam_08():
+    for i in range(1, 10):
+        for j in range(i, 10):
+            print("{0}*{1}={2}".format(str(i), str(j), str(i*j)), end="\t")
+        print()
+
+
 '''9、暂停一秒输出。'''
+
+
+def test_exam_09():
+    for i in range(1, 10):
+        for j in range(i, 10):
+            print("{0}*{1}={2}".format(str(i), str(j), str(i*j)), end="\t")
+        print()
+        time.sleep(1)
+
+
 '''10、暂停一秒输出，并格式化当前时间。'''
+
+
+def test_exam_10():
+    time.sleep(1)
+    print(time.localtime())
+    # print(time.tm_year))
+
+
 '''11、古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？'''
 '''12、判断101-200之间有多少个素数，并输出所有素数。'''
 '''13、打印出所有的"水仙花数"，所谓"水仙花数"是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个"水仙花数"，因为153=1的三次方＋5的三次方＋3的三次方。'''
@@ -210,6 +291,13 @@ if __name__ == '__main__':
     # test_exam_01()
     # test_exam_02()
     # test_exam_02x()
-    test_exam_03()
+    # test_exam_03()
+    # test_exam_04()
+    # test_exam_05()
+    # test_exam_06()
+    # test_exam_07()
+    # test_exam_08()
+    # test_exam_09()
+    test_exam_10()
     # test_exam_25()
     # test_exam_26()
