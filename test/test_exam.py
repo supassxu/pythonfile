@@ -1,9 +1,11 @@
 import calendar
 import math
+import random
 import time
+import turtle
 from tkinter.ttk import Style
 from colorama import Back, Fore
-
+from tkinter import *
 
 '''1、有四个数字：1、2、3、4，能组成多少个互不相同且无重复数字的三位数？各是多少？'''
 
@@ -461,7 +463,7 @@ def test_exam_27():
 
 def exchange(s2):
     s = list(s2)
-    for i in range(int(len(s)/2)):
+    for i in range(int(len(s) / 2)):
         t = s[i]
         s[i] = s[len(s) - 1 - i]
         s[len(s) - 1 - i] = t
@@ -474,7 +476,7 @@ def exchange(s2):
 
 def test_exam_28():
     five_age = 10
-    for i in range(5-1):
+    for i in range(5 - 1):
         five_age += 2
     print("第五个人{0}岁".format(five_age))
 
@@ -487,7 +489,7 @@ def test_exam_29():
     x = int(s1)
     for i in range(4, -1, -1):
         if x % math.pow(10, i):
-            print("输入的数是{0}位数，逆序打印的数字如下：".format(str(i+1)))
+            print("输入的数是{0}位数，逆序打印的数字如下：".format(str(i + 1)))
             break
     print(exchange(s1))
 
@@ -561,7 +563,7 @@ def print_3_time(str1):
 def test_exam_35():
     # 方法一：
     print('\033[1;31;40m')
-    print('*'*50)
+    print('*' * 50)
     print('\033[7;31m错误次数超限，用户已经被永久锁定，请联系管理员！\033[1;31;40m')
     print('*' * 50)
     print('\033[0m')
@@ -602,7 +604,7 @@ def test_exam_36():
     list_x = []
     for i in range(2, 101):
         flag = True
-        for j in range(2, int(math.pow(i, 1 / 2))+1):
+        for j in range(2, int(math.pow(i, 1 / 2)) + 1):
             if i % j == 0:
                 flag = False
         if flag:
@@ -618,7 +620,7 @@ def test_exam_37():
     str1 = input("请输入10个整数，以空格隔开的字符串，程序将排列顺序打印出来。\n").split(" ")
     x = list(map(int, str1))
     for i in range(len(x)):
-        for j in range(i+1, len(x)):
+        for j in range(i + 1, len(x)):
             if x[i] >= x[j]:
                 t = x[i]
                 x[i] = x[j]
@@ -660,8 +662,8 @@ def test_exam_39():
         if str1 >= x[i]:
             address += 1
     x.append(0)
-    for i in range(x.__len__()-1, address, -1):
-        x[i] = x[i-1]
+    for i in range(x.__len__() - 1, address, -1):
+        x[i] = x[i - 1]
     x[address] = str1
     print("插入输入的整数{0}后，数组排序如下：".format(str(str1)))
     print(x)
@@ -682,25 +684,54 @@ def test_exam_40():
     print(s)
 
 
-'''41、模仿静态变量的用法。'''
+'''41、模仿静态变量的用法。(该题为宽泛性问题，模仿跟着题目做的)'''
+
+'''class Static:
+    StaticVar = 5
+
+    def test_exam_41(self):
+        self.StaticVar += 1
+        print(self.StaticVar)
+
+
+print(Static.StaticVar)
+a = Static()
+for i in range(3):
+    a.test_exam_41()'''
 
 
 def test_exam_41():
-    pass
+    var = 0
+    print('var = %d' % var)
+    var += 1
 
 
-'''42、学习使用auto定义变量的用法。'''
+'''42、学习使用auto定义变量的用法。（自定义方法）'''
+
+
+def auto_func():
+    print("调用方法并返回从1加到10的和")
+    total = 0
+    for i in range(10):
+        total += i
+    return total
 
 
 def test_exam_42():
-    pass
+    print("调用字符串逆序方法")
+    print(exchange("0123456789"))
+    print(auto_func())
 
 
-'''43、模仿静态变量(static)另一案例。'''
+'''43、模仿静态变量(static)另一案例。(参考)'''
 
 
-def test_exam_43():
-    pass
+class Num:
+    nNum = 1
+
+    def test_exam_43(self):
+        self.nNum += 1
+        print('nNum = %d' % self.nNum)
 
 
 '''44、两个 3 行 3 列的矩阵，实现其对应位置的数据相加，并返回一个新矩阵：
@@ -713,71 +744,267 @@ Y = [[5,8,1],
 
 
 def test_exam_44():
-    pass
+    x = [[12, 7, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+    y = [[5, 8, 1],
+         [6, 7, 3],
+         [4, 5, 9]]
+    z = [[0 for col in range(3)] for row in range(3)]
+    for i in range(3):
+        for j in range(3):
+            z[i][j] = x[i][j] + y[i][j]
+    print("2个3行3列的数组对应元素相加之后得到的数组如下：")
+    print(z)
 
 
 '''45、统计 1 到 100 之和。'''
 
 
 def test_exam_45():
-    pass
+    total = 0
+    for i in range(1, 101):
+        total += i
+    print("1 到 100 之和为%d" % total)
 
 
 '''46、求输入数字的平方，如果平方运算后小于 50 则退出。'''
+
+
+def test_exam_46():
+    x = int(input("请输入一个数字，程序将计算并输出大于等于50的数字和它的平方运算值。\n"))
+    y = math.pow(x, 2)
+    if y < 50:
+        exit()
+    else:
+        print("输入的数为{0}，计算得出的平方值为{1}".format(x, y))
+
+
 '''47、两个变量值互换。'''
+
+
+def test_exam_47():
+    a = 3
+    b = 'abcdefg'
+    print("转换前变量a为{0}，变量b为{1}".format(str(a), b))
+    t = a
+    a = b
+    b = t
+    print("转换前变量a为{0}，变量b为{1}".format(str(a), str(b)))
+
+
 '''48、数字比较。'''
+
+
+def test_exam_48():
+    a = int(input("请输入第1个数字，程序将比对并输出和第2个数的大小结果。\n"))
+    b = int(input("请输入第2个数字，程序将比对并输出和第1个数的大小结果。\n"))
+    if a == b:
+        print("{0}等于{1}".format(str(a), str(b)))
+    elif a < b:
+        print("{0}小于{1}".format(str(a), str(b)))
+    else:
+        print("{0}大于{1}".format(str(a), str(b)))
+
+
 '''49、使用lambda来创建匿名函数。'''
+
+
+def test_exam_49():
+    print("使用lambda函数传入参数创建并初始化2维数组！")
+    x = lambda a, b: [[0 for col in range(a)] for row in range(b)]
+    print(x(5, 5))
+
+
 '''50、输出一个随机数。'''
+
+
+def test_exam_50():
+    print("程序将输出0-100之间的随机数。")
+    print(random.randint(0, 100))           # 产生n--m范围内的一个随机数
+    print(random.random())                  # 产生0到1之间的一个随机数
+    print(random.uniform(1.3, 3.6))         # 产生n--m范围内的一个浮点数
+    print(random.randrange(0, 100, 5))      # 产生n--m范围内间隔为k的整数
+    print(random.choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]))  # 序列中随机选取一个元素
+    print(random.shuffle([1, 3, 5, 7, 9]))                # 在一些特殊的情况下可能对序列进行一次打乱操作
+
+
 '''51、学习使用按位与 & 。'''
+
+
+def test_exam_51():
+    a = 58      # a = 0011 1010
+    b = 11      # b = 0000 1011
+    c = 0       # c = 0000 0000
+    c = a & b   # c = 0000 1010 = 10（ten）
+    print(c)
+
+
 '''52、学习使用按位或 |。'''
+
+
+def test_exam_52():
+    a = 58      # a = 0011 1010
+    b = 11      # b = 0000 1011
+    c = 0       # c = 0000 0000
+    c = a | b   # c = 0011 1011 = 59（ten）
+    print(c)
+
+
 '''53、学习使用按位异或 ^ 。'''
+
+
+def test_exam_53():
+    a = 58      # a = 0011 1010
+    b = 11      # b = 0000 1011
+    c = 0       # c = 0000 0000
+    c = a ^ b   # c = 0011 0001 = 49（ten）
+    print(c)
+
+
 '''54、取一个整数a从右端开始的4〜7位。'''
+
+
+def test_exam_54():
+    s = input("请输入7位数以上的整数，程序将取从右端开始的4〜7位并输出该数\n")
+    if len(s) >= 7:
+        str1 = s[-4: -8: -1]
+        print(str1)
+    else:
+        print("整数的长度小于7，请重新输入位数大于7的整数。")
+
+
 '''55、学习使用按位取反~。'''
+
+
+def test_exam_55():
+    a = 58      # a = 0011 1010
+    c = 0       # c = 0000 0000
+    c = ~a      # c = 1100 0101 = -59（ten）
+    print(c)
+
+
 '''56、画图，学用circle画圆形。'''
+
+
+def test_exam_56():
+    x1, y1 = 100, 100
+    x2, y2 = 100, -100
+    x3, y3 = -100, -100
+    x4, y4 = -100, 100
+
+    # 绘制折线
+    turtle.penup()
+    turtle.goto(x1, y1)
+    turtle.pendown()
+    turtle.circle(10)
+    turtle.goto(x2, y2)
+    turtle.circle(20)
+    turtle.goto(x3, y3)
+    turtle.circle(30)
+    turtle.goto(x4, y4)
+    turtle.circle(50)
+    turtle.done()
+
+
 '''57、画图，学用line画直线。'''
-'''58、画图，学用rectangle画方形。'''
+
+
+def test_exam_57():
+    x1, y1 = 100, 100
+    x2, y2 = 100, -100
+    x3, y3 = -100, -100
+    x4, y4 = -100, 100
+
+    # 绘制折线
+    turtle.penup()
+    turtle.goto(x1, y1)
+    turtle.pendown()
+
+    turtle.goto(x2, y2)
+    turtle.goto(x3, y3)
+    turtle.goto(x4, y4)
+    turtle.done()
+
+
+'''58、画图，学用rectangle画方形。(这题不会，模仿学习的代码)'''
+
+
+def test_exam_58():
+    tk = Tk()
+    tk.title('rectangle')
+    canvas = Canvas(tk, width=400, height=400, bg='red')
+    x0 = 263
+    y0 = 263
+    x1 = 275
+    y1 = 275
+    for i in range(19):
+        canvas.create_rectangle(x0, y0, x1, y1)
+        x0 -= 5
+        y0 -= 5
+        x1 += 5
+        y1 += 5
+    canvas.pack()
+    tk.mainloop()
+
+
 '''59、画图，综合例子。(程序分析：利用for循环控制100-999个数，每个数分解出个位，十位，百位。)'''
+
+
+def test_exam_59():
+    pass
+
+
 '''60、计算字符串长度。'''
+
+
+def test_exam_60():
+    pass
+
+
 '''61、打印出杨辉三角形（要求打印出10行如下图）。'''
-'''62、'''
-'''63、'''
-'''64、'''
-'''65、'''
-'''66、'''
-'''67、'''
-'''68、'''
-'''69、'''
-'''70、'''
-'''71、'''
-'''72、'''
-'''73、'''
-'''74、'''
-'''75、'''
-'''76、'''
-'''77、'''
-'''78、'''
-'''79、'''
-'''80、'''
-'''81、'''
-'''82、'''
-'''83、'''
-'''84、'''
-'''85、'''
-'''86、'''
-'''87、'''
-'''88、'''
-'''89、'''
-'''90、'''
-'''91、'''
-'''92、'''
-'''93、'''
-'''94、'''
-'''95、'''
-'''96、'''
-'''97、'''
-'''98、'''
-'''99、'''
-'''100、'''
+'''62、查找字符串。'''
+'''63、画椭圆。'''
+'''64、利用ellipse 和 rectangle 画图。'''
+'''65、一个最优美的图案。'''
+'''66、输入3个数a,b,c，按大小顺序输出。'''
+'''67、输入数组，最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。'''
+'''68、有 n 个整数，使其前面各数顺序向后移 m 个位置，最后 m 个数变成最前面的 m 个数。'''
+'''69、有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），凡报到3的人退出圈子，问最后留下的是原来第几号的那位。'''
+'''70、写一个函数，求一个字符串的长度，在main函数中输入字符串，并输出其长度。'''
+'''71、编写input()和output()函数输入，输出5个学生的数据记录。'''
+'''72、创建一个链表。'''
+'''73、反向输出一个链表。'''
+'''74、列表排序及连接。'''
+'''75、放松一下，算一道简单的题目。'''
+'''76、编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数1/1+1/3+...+1/n。'''
+'''77、循环输出列表。'''
+'''78、找到年龄最大的人，并输出。请找出程序中有什么问题。'''
+'''79、字符串排序。'''
+'''80、海滩上有一堆桃子，五只猴子来分。第一只猴子把这堆桃子平均分为五份，多了一个，这只猴子把多的一个扔入海中，拿走了一份。
+第二只猴子把剩下的桃子又平均分成五份，又多了一个，它同样把多的一个扔入海中，拿走了一份，第三、第四、第五只猴子都是这样做的，
+问海滩上原来最少有多少个桃子？'''
+'''81、809*??=800*??+9*?? 其中??代表的两位数, 809*??为四位数，8*??的结果为两位数，9*??的结果为3位数。求??代表的两位数，及809*??后的结果。'''
+'''82、八进制转换为十进制。'''
+'''83、求0—7所能组成的奇数个数。'''
+'''84、连接字符串。'''
+'''85、输入一个奇数，然后判断最少几个 9 除于该数的结果为整数。'''
+'''86、两个字符串连接程序。'''
+'''87、回答结果（结构体变量传递）。'''
+'''88、读取7个数（1—50）的整数值，每读取一个值，程序打印出该值个数的＊。'''
+'''89、某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：每位数字都加上5,然后用和除以10的余数代替该数字，
+再将第一位和第四位交换，第二位和第三位交换。'''
+'''90、列表使用实例。'''
+'''91、时间函数举例1。'''
+'''92、时间函数举例2。'''
+'''93、时间函数举例3。'''
+'''94、时间函数举例4,一个猜数游戏，判断一个人反应快慢。'''
+'''95、字符串日期转换为易读的日期格式。'''
+'''96、计算字符串中子串出现的次数。'''
+'''97、从键盘输入一些字符，逐个把它们写到磁盘文件上，直到输入一个 # 为止。'''
+'''98、从键盘输入一个字符串，将小写字母全部转换成大写字母，然后输出到一个磁盘文件"test"中保存。'''
+'''99、有两个磁盘文件A和B,各存放一行字母,要求把这两个文件中的信息合并(按字母顺序排列), 输出到一个新文件C中。'''
+'''100、列表转换为字典。'''
 
 if __name__ == '__main__':
     # test_exam_01()
@@ -821,4 +1048,31 @@ if __name__ == '__main__':
     # test_exam_38()
     # test_exam_39()
     # test_exam_40()
-    test_exam_41()
+    '''for i in range(3):
+        test_exam_41()'''
+    # test_exam_42()
+    '''nNum = 2
+    inst = Num()
+    for i in range(3):
+        nNum += 1
+        print('The num = %d' % nNum)
+        inst.test_exam_43()'''
+    # test_exam_44()
+    # test_exam_45()
+    # test_exam_46()
+    # test_exam_47()
+    # test_exam_48()
+    # test_exam_49()
+    # test_exam_50()
+    # test_exam_51()
+    # test_exam_52()
+    # test_exam_53()
+    # test_exam_54()
+    # test_exam_55()
+    # test_exam_56()
+    # test_exam_57()
+    test_exam_58()
+    # test_exam_59()
+    # test_exam_60()
+    # test_exam_61()
+
