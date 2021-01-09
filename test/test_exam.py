@@ -952,26 +952,135 @@ def test_exam_58():
 
 
 def test_exam_59():
-    pass
+    canvas = Canvas(width=300, height=300, bg='green')
+    canvas.pack(expand=YES, fill=BOTH)
+    x0 = 150
+    y0 = 100
+    canvas.create_oval(x0 - 10, y0 - 10, x0 + 10, y0 + 10)
+    canvas.create_oval(x0 - 20, y0 - 20, x0 + 20, y0 + 20)
+    canvas.create_oval(x0 - 50, y0 - 50, x0 + 50, y0 + 50)
+    b = 0.809
+    for i in range(16):
+        a = 2 * math.pi / 16 * i
+        x = math.ceil(x0 + 48 * math.cos(a))
+        y = math.ceil(y0 + 48 * math.sin(a) * b)
+        canvas.create_line(x0, y0, x, y, fill='red')
+    canvas.create_oval(x0 - 60, y0 - 60, x0 + 60, y0 + 60)
+
+    for k in range(501):
+        for i in range(17):
+            a = 2 * math.pi / 16 * i + (2 * math.pi / 180) * k
+            x = math.ceil(x0 + 48 * math.cos(a))
+            y = math.ceil(y0 + 48 * math.sin(a) * b)
+            canvas.create_line(x0, y0, x, y, fill='red')
+        for j in range(17):
+            a = 2 * math.pi / 16 * j + (2 * math.pi / 180) * k
+            x = math.ceil(x0 + 48 * math.cos(a))
+            y = math.ceil(y0 + 48 * math.sin(a) * b)
+            canvas.create_line(x0, y0, x, y, fill='red')
+    mainloop()
 
 
 '''60、计算字符串长度。'''
 
 
 def test_exam_60():
-    pass
+    s = input("请输入一行字符串，程序将计算并输出该字符串的长度\n")
+    print("输入字符串的长度为：{0}".format(len(s)))
 
 
 '''61、打印出杨辉三角形（要求打印出10行如下图）。'''
+
+
+def test_exam_61():
+    s = int(input("请输入一个正整数，程序将输出包含输入整数行的杨辉三角\n"))
+    a = [[0 for col in range(s)] for row in range(s)]
+    a[0][0] = 1
+    for i in range(1, s):
+        for j in range(i):
+            if j == 0:
+                a[i][j] = 1
+                print("1", end="\t")
+            elif j == i - 1:
+                a[i][j] = 1
+                print("1", end="")
+            else:
+                a[i][j] = a[i-1][j-1] + a[i-1][j]
+                print(str(a[i][j]), end="\t")
+        print()
+
+
 '''62、查找字符串。'''
+
+
+def test_exam_62():
+    s = input("请输入1个字符串，作为查找样本字符串\n")
+    x = input("请输入1个字符串，程序将从上一个字符串中找出本字符串所在的位置\n")
+    index = s.find(x) + 1
+    if index != -1:
+        print("第二行输入的字符串在第一行输入字符串的第{0}个字母位置".format(str(index)))
+    else:
+        print("第二行输入的字符串在第一行输入字符串中找不到")
+
+
 '''63、画椭圆。'''
+
+
+def test_exam_63():
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Ellipse
+
+
+
 '''64、利用ellipse 和 rectangle 画图。'''
+
+
+def test_exam_64():
+    pass
+
+
 '''65、一个最优美的图案。'''
+
+
+def test_exam_65():
+    pass
+
+
 '''66、输入3个数a,b,c，按大小顺序输出。'''
+
+
+def test_exam_66():
+    pass
+
+
 '''67、输入数组，最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。'''
+
+
+def test_exam_67():
+    pass
+
+
 '''68、有 n 个整数，使其前面各数顺序向后移 m 个位置，最后 m 个数变成最前面的 m 个数。'''
+
+
+def test_exam_68():
+    pass
+
+
 '''69、有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），凡报到3的人退出圈子，问最后留下的是原来第几号的那位。'''
+
+
+def test_exam_69():
+    pass
+
+
 '''70、写一个函数，求一个字符串的长度，在main函数中输入字符串，并输出其长度。'''
+
+
+def test_exam_70():
+    pass
+
+
 '''71、编写input()和output()函数输入，输出5个学生的数据记录。'''
 '''72、创建一个链表。'''
 '''73、反向输出一个链表。'''
@@ -1071,8 +1180,17 @@ if __name__ == '__main__':
     # test_exam_55()
     # test_exam_56()
     # test_exam_57()
-    test_exam_58()
+    # test_exam_58()
     # test_exam_59()
     # test_exam_60()
     # test_exam_61()
+    test_exam_62()
+    test_exam_63()
+    test_exam_64()
+    test_exam_65()
+    test_exam_66()
+    test_exam_67()
+    test_exam_68()
+    test_exam_69()
+    test_exam_70()
 
