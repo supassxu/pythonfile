@@ -1023,69 +1023,197 @@ def test_exam_62():
         print("第二行输入的字符串在第一行输入字符串中找不到")
 
 
-'''63、画椭圆。'''
+'''63、画椭圆。（完全不会，跟着搜索出来的题目模仿，模仿完好像也不会，哈哈）'''
 
 
 def test_exam_63():
     import matplotlib.pyplot as plt
     from matplotlib.patches import Ellipse
 
+    fig = plt.figure(0)
+    ax = fig.add_subplot(111, aspect='equal')
+    e = Ellipse(xy=(0, 2), width=1.81*2, height=0.94*2, angle=27.6)
+    ax.add_artist(e)
+
+    e.set_facecolor("green")
+    plt.xlim(-2, 2)
+    plt.ylim(0.5, 3.5)
+    ax.grid(True)
+    plt.title("50% Probablity Contour - Homework 4.2")
+    plt.show()
 
 
-'''64、利用ellipse 和 rectangle 画图。'''
+'''64、利用ellipse 和 rectangle 画图。（完全不会，跟着搜索出来的题目模仿）'''
 
 
 def test_exam_64():
-    pass
+    canvas = Canvas(width=400, height=600, bg='white')
+    left = 20
+    right = 50
+    top = 50
+    num = 15
+    for i in range(num):
+        canvas.create_oval(250 - right, 250 - left, 250 + right, 250 + left)
+        canvas.create_oval(250 - 20, 250 - top, 250 + 20, 250 + top)
+        canvas.create_rectangle(20 - 2*i, 20 - 2*i, 10 * (i+2), 10 * (i+2))
+        right += 5
+        left += 5
+        top += 10
+    canvas.pack()
+    mainloop()
 
 
-'''65、一个最优美的图案。'''
+'''65、一个最优美的图案。(开放性问题没有参考答案，本题解题参考题目平台)'''
+
+
+class PTS:
+    def __init__(self):
+        self.x = 0
+        self.y = 0
+points = []
 
 
 def test_exam_65():
-    pass
+    screen_x = 400
+    screen_y = 400
+    canvas = Canvas(width=screen_x, height=screen_y, bg='white')
+
+    AspectRatio = 0.85
+    MAXPTS = 15
+    h = screen_y
+    w = screen_x
+    xcenter = w / 2
+    ycenter = h / 2
+    radius = (h - 30) / (AspectRatio * 2) - 20
+    step = 360 / MAXPTS
+    angle = 0.0
+    for i in range(MAXPTS):
+        rads = angle * math.pi / 180.0
+        p = PTS()
+        p.x = xcenter + int(math.cos(rads) * radius)
+        p.y = ycenter + int(math.sin(rads) * radius * AspectRatio)
+        angle += step
+        points.append(p)
+    canvas.create_oval(xcenter - radius, ycenter - radius, xcenter + radius, ycenter + radius)
+    for i in range(MAXPTS):
+        for j in range(i, MAXPTS):
+            canvas.create_line(points[i].x, points[i].y, points[j].x, points[j].y)
+    canvas.pack()
+    mainloop()
 
 
 '''66、输入3个数a,b,c，按大小顺序输出。'''
 
 
 def test_exam_66():
-    pass
+    s = input("请输入3个数，空格隔开，程序将比较后按从小到大顺序输出。\n").split(" ")
+    x = list(map(int, s))
+    x.sort()
+    for i in range(x.__len__()):
+        print(x[i], end="\t")
 
 
 '''67、输入数组，最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。'''
 
 
 def test_exam_67():
-    pass
+    s = input("请输入一组数，空格隔开，程序将最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。\n").split(" ")
+    x = list(map(int, s))
+    min = max = x[0]
+    a = b = 0
+    for i in range(1, x.__len__()):
+        if x[i] >= max:
+            max = x[i]
+            a = i
+        elif x[i] < min:
+            min = x[i]
+            b = i
+    t = x[0]
+    x[0] = x[a]
+    x[a] = t
+    t = x[-1]
+    x[-1] = x[b]
+    x[b] = t
+    for i in range(x.__len__()):
+        print(x[i], end="\t")
 
 
 '''68、有 n 个整数，使其前面各数顺序向后移 m 个位置，最后 m 个数变成最前面的 m 个数。'''
 
 
 def test_exam_68():
-    pass
+    s = input("请输入n个整数，空格隔开，之后根据提示输入整数m，程序将使其前面各数顺序向后移 m 个位置，最后 m 个数变成最前面的 m 个数。\n").split(" ")
+    m = int(input("请输入整数m，程序将使其前面各数顺序向后移 m 个位置，最后 m 个数变成最前面的 m 个数，并输入该内容。\n"))
+    for i in range(-m, 0):
+        s.insert(i+m, s[i])
+        s.pop(i)
+    for i in range(s.__len__()):
+        print(s[i], end="\t")
 
 
 '''69、有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），凡报到3的人退出圈子，问最后留下的是原来第几号的那位。'''
 
 
 def test_exam_69():
-    pass
+    s = int(input("请输入1个整数n，程序从第一个人开始报数（从1到3报数），凡报到3的人退出圈子，计算最后留下的是原来第几号的那位。\n"))
+    x = [i for i in range(1, s+1)]
+    # print(x)  # 用于生成对应的数据在notepad++文档中手动调试
+    i = t = 0
+    while len(x) > 1:
+        t += 1
+        if t == 4:
+            t = 1
+        i += 1
+        if i > len(x):
+            i = 1
+        if t == 3:
+            x.pop(i-1)
+            i -= 1
+    print("从第一个人开始报数（从1到3报数），凡报到3的人退出圈子，计算最后留下的是原来第{0}号的那位".format(str(x[0])))
 
 
 '''70、写一个函数，求一个字符串的长度，在main函数中输入字符串，并输出其长度。'''
 
 
-def test_exam_70():
-    pass
+def test_exam_70(s):
+    print("该字符串长度为：{0}".format(len(s)))
 
 
 '''71、编写input()和output()函数输入，输出5个学生的数据记录。'''
+
+
+def test_exam_71():
+    pass
+
+
 '''72、创建一个链表。'''
+
+
+def test_exam_72():
+    pass
+
+
 '''73、反向输出一个链表。'''
+
+
+def test_exam_73():
+    pass
+
+
 '''74、列表排序及连接。'''
+
+
+def test_exam_74():
+    pass
+
+
 '''75、放松一下，算一道简单的题目。'''
+
+
+def test_exam_75():
+    pass
+
+
 '''76、编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数1/1+1/3+...+1/n。'''
 '''77、循环输出列表。'''
 '''78、找到年龄最大的人，并输出。请找出程序中有什么问题。'''
@@ -1184,13 +1312,14 @@ if __name__ == '__main__':
     # test_exam_59()
     # test_exam_60()
     # test_exam_61()
-    test_exam_62()
-    test_exam_63()
-    test_exam_64()
-    test_exam_65()
-    test_exam_66()
-    test_exam_67()
-    test_exam_68()
-    test_exam_69()
-    test_exam_70()
+    # test_exam_62()
+    # test_exam_63()
+    # test_exam_64()
+    # test_exam_65()
+    # test_exam_66()
+    # test_exam_67()
+    # test_exam_68()
+    # test_exam_69()
+    str1 = input("请输入1行字符串，程序将输入该字符串长度。\n")
+    test_exam_70(str1)
 
