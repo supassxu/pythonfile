@@ -4,6 +4,8 @@ import random
 import time
 import turtle
 from tkinter.ttk import Style
+
+from click._compat import raw_input
 from colorama import Back, Fore
 from tkinter import *
 
@@ -1179,59 +1181,231 @@ def test_exam_70(s):
     print("该字符串长度为：{0}".format(len(s)))
 
 
-'''71、编写input()和output()函数输入，输出5个学生的数据记录。'''
+'''71、编写input()和output()函数输入，输出5个学生的数据记录。（开放性题目，跟着模仿写的代码）'''
+n = 3
+student = []
 
 
-def test_exam_71():
-    pass
+def test_exam_71_input_stu(str1):
+    for i in range(5):
+        student.append(['', '', []])
+    for i in range(n):
+        str1[i][0] = raw_input('input student num:\n')
+        str1[i][1] = raw_input('input student name:\n')
+        for j in range(3):
+            str1[i][2].append(int(raw_input('score:\n')))
 
 
-'''72、创建一个链表。'''
+def test_exam_71_output_stu(str1):
+    for i in range(n):
+        print('%-6s%-10s' % (str1[i][0], str1[i][1]))
+        for j in range(3):
+            print('%-8d' % str1[i][2][j])
+
+
+'''72、创建一个链表。(跟着平台模仿写的代码)'''
 
 
 def test_exam_72():
-    pass
+    ptr = []
+    for i in range(5):
+        num = int(raw_input('请输入1个数字：\n'))
+        ptr.append(num)
+    print(ptr)
 
 
 '''73、反向输出一个链表。'''
 
 
 def test_exam_73():
-    pass
+    ptr = []
+    for i in range(5):
+        num = int(raw_input('请输入1个数字：\n'))
+        ptr.append(num)
+    for i in range(len(ptr)-1, -1, -1):
+        print(ptr[i], end='\t')
 
 
 '''74、列表排序及连接。'''
 
 
 def test_exam_74():
-    pass
+    str1 = input("输入一组整数数组a，以空格隔开。\n").split(" ")
+    str2 = input("输入一组整数数组b，以空格隔开，程序将把这2个数组进行连接后排序输出。\n").split(" ")
+    a = list(map(int, str1))
+    b = list(map(int, str2))
+    a.extend(b)
+    print(a)
+    a.sort()
+    print(a)
 
 
 '''75、放松一下，算一道简单的题目。'''
+'''while True:
+    a = input('请输入Q或q退出当前程序：')
+    if(a.__eq__('q') or a=='Q'):
+        print('程序循环结束，退出！')
+        break
+print(a)'''
 
 
 def test_exam_75():
-    pass
+    salarySum = 0
+    salarys = []
+    for i in range(4):
+        s = input('请输入一共4位同事的薪资（按q或Q中途结束）：')
+        if s.upper() == 'Q':
+            print('录入完成，退出')
+            break
+        if float(s) < 0:
+            continue
+        salarys.append(float(s))
+        salarySum += float(s)
+    else:
+        print('您已经全部录入一共4位同事的薪资')
+    print('录入薪资：', salarys)
+    print('平均薪资{0}'.format(salarySum / 4))
 
 
 '''76、编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数1/1+1/3+...+1/n。'''
+
+
+def test_exam_76():
+    n = int(input("输入1个数a，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数1/1+1/3+...+1/n。\n"))
+    total = 0
+    if n % 2 == 0:
+        for i in range(2, n+1, 2):
+            total += 1/i
+    else:
+        for i in range(1, n+1, 2):
+            total += 1/i
+    print("输入的数为{0}，计算的结果为{1}。".format(n, total))
+
+
 '''77、循环输出列表。'''
-'''78、找到年龄最大的人，并输出。请找出程序中有什么问题。'''
+
+
+def test_exam_77():
+    str1 = input("输入一组整数数组a，以空格隔开，程序将输出这个数组的内容。\n").split(" ")
+    for i in range(len(str1)):
+        print(str1[i], end="\t")
+
+
+'''78、找到年龄最大的人，并输出。请找出程序中有什么问题。（使用了2个数组）'''
+
+
+def test_exam_78():
+    str1 = input("输入一组代表一群人年龄的整数，以空格隔开，程序将输出这群人中年龄最大的年龄。\n").split(" ")
+    x = list(map(int, str1))
+    max = x[0]
+    for i in range(1, len(str1)):
+        if max <= x[i]:
+            max = x[i]
+    print("这群人中年龄最大的是{0}岁".format(str(max)))
+
+
 '''79、字符串排序。'''
+
+
+def test_exam_79():
+    str1 = input("请输入一串字符串，程序将进行字符串排序并输出排序后的字符串。\n")
+    ls = list(str1)
+    ls.sort()
+    str2 = "".join(ls)
+    print(str2)
+
+
 '''80、海滩上有一堆桃子，五只猴子来分。第一只猴子把这堆桃子平均分为五份，多了一个，这只猴子把多的一个扔入海中，拿走了一份。
 第二只猴子把剩下的桃子又平均分成五份，又多了一个，它同样把多的一个扔入海中，拿走了一份，第三、第四、第五只猴子都是这样做的，
-问海滩上原来最少有多少个桃子？'''
+问海滩上原来最少有多少个桃子？(第5只猴子可以操作时，则最少有6个桃子，第5只猴子最少拿到1个桃子，所剩的桃子为前1只面对桃子总数-1的3/4)'''
+
+
+def test_exam_80():
+    i = 1
+    while True:
+        total5 = 5 * i + 1
+        total = total5
+        for j in range(4):
+            total = 5 * total / 4 + 1
+            if total != int(total):
+                break
+        if total == int(total):
+            print("海滩上原来最少有个{0}桃子，第5只猴子拿到了{1}个桃子。".format(str(total), str(i)))
+            break
+        i += 1
+
+
 '''81、809*??=800*??+9*?? 其中??代表的两位数, 809*??为四位数，8*??的结果为两位数，9*??的结果为3位数。求??代表的两位数，及809*??后的结果。'''
+
+
+def test_exam_81():
+    pass
+
+
 '''82、八进制转换为十进制。'''
+
+
+def test_exam_82():
+    pass
+
+
 '''83、求0—7所能组成的奇数个数。'''
+
+
+def test_exam_83():
+    pass
+
+
 '''84、连接字符串。'''
+
+
+def test_exam_84():
+    pass
+
+
 '''85、输入一个奇数，然后判断最少几个 9 除于该数的结果为整数。'''
+
+
+def test_exam_85():
+    pass
+
+
 '''86、两个字符串连接程序。'''
+
+
+def test_exam_86():
+    pass
+
+
 '''87、回答结果（结构体变量传递）。'''
+
+
+def test_exam_87():
+    pass
+
+
 '''88、读取7个数（1—50）的整数值，每读取一个值，程序打印出该值个数的＊。'''
+
+
+def test_exam_88():
+    pass
+
+
 '''89、某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：每位数字都加上5,然后用和除以10的余数代替该数字，
 再将第一位和第四位交换，第二位和第三位交换。'''
+
+
+def test_exam_89():
+    pass
+
+
 '''90、列表使用实例。'''
+
+
+def test_exam_90():
+    pass
+
+
 '''91、时间函数举例1。'''
 '''92、时间函数举例2。'''
 '''93、时间函数举例3。'''
@@ -1320,6 +1494,17 @@ if __name__ == '__main__':
     # test_exam_67()
     # test_exam_68()
     # test_exam_69()
-    str1 = input("请输入1行字符串，程序将输入该字符串长度。\n")
-    test_exam_70(str1)
-
+    # str1 = input("请输入1行字符串，程序将输入该字符串长度。\n")
+    # test_exam_70(str1)
+    '''test_exam_71_input_stu(student)
+    print(student)
+    test_exam_71_output_stu(student)'''
+    # test_exam_72()
+    # test_exam_73()
+    # test_exam_74()
+    # test_exam_75()
+    # test_exam_76()
+    # test_exam_77()
+    # test_exam_78()
+    # test_exam_79()
+    test_exam_80()
