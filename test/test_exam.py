@@ -1339,21 +1339,35 @@ def test_exam_80():
 
 
 def test_exam_81():
-    pass
+    for i in range(11, 100):
+        if 10000 > 809 * i > 999 and 8 * i < 100 and 99 < 9 * i < 1000:
+            print("??代表的两位数为{0}，809*??后的结果为{1}。".format(str(i), str(809 * i)))
+            break
 
 
 '''82、八进制转换为十进制。'''
 
 
 def test_exam_82():
-    pass
+    a = input("请输入八进制数(整数)，程序将转为十进制数并输出。\n")
+    b = int(a, 8)
+    print("输入的八进制数为{0}，转换的十进制数为{1}。".format(str(a), str(b)))
+
+
+def test_exam_82x():
+    s = input("请输入八进制数(整数)，程序将转为十进制数并输出。\n")
+    sum = 0
+    for i in range(len(s)):
+        sum += int(s[i]) * (8 ** (len(s)-i - 1))
+    print("输入的八进制数为{0}，转换的十进制数为{1}。".format(s, str(sum)))
 
 
 '''83、求0—7所能组成的奇数个数。'''
 
 
 def test_exam_83():
-    pass
+    x = [0, 1, 2, 3, 4, 5, 6, 7]
+    total = 0
 
 
 '''84、连接字符串。'''
@@ -1507,4 +1521,7 @@ if __name__ == '__main__':
     # test_exam_77()
     # test_exam_78()
     # test_exam_79()
-    test_exam_80()
+    # test_exam_80()
+    # test_exam_81()
+    test_exam_82()
+    test_exam_82x()
