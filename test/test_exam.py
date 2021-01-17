@@ -3,6 +3,7 @@ import math
 import random
 import time
 import turtle
+from collections import Counter
 from tkinter.ttk import Style
 
 from click._compat import raw_input
@@ -1362,47 +1363,91 @@ def test_exam_82x():
     print("输入的八进制数为{0}，转换的十进制数为{1}。".format(s, str(sum)))
 
 
-'''83、求0—7所能组成的奇数个数。'''
+'''83、求0—7所能组成的奇数个数。（没弄懂题目为啥没限制小数位，跟着题目学习模仿写代码）'''
 
 
 def test_exam_83():
-    x = [0, 1, 2, 3, 4, 5, 6, 7]
-    total = 0
+    # x = [0, 1, 2, 3, 4, 5, 6, 7]
+    total = 4
+    s = 4
+    for i in range(2, 9):
+        print(total)
+        if i <= 2:
+            s *= 7
+        else:
+            s *= 8
+        total += s
+    print("0-7所能组成的奇数的个数为：{0}".format(str(total)))
 
 
 '''84、连接字符串。'''
 
 
 def test_exam_84():
-    pass
+    str1 = input("请输入第1个字符串。\n")
+    str2 = input("请输入第2个字符串，程序将这2个字符串进行连接并输出。\n")
+    print(str1 + str2)
+    a = ['abc', '123', 'efgh', '4567658']
+    print(','.join(a))
 
 
 '''85、输入一个奇数，然后判断最少几个 9 除于该数的结果为整数。'''
 
 
 def test_exam_85():
-    pass
+    str1 = int(input("请输入1个奇数，程序将判断最少几个 9 除于该数的结果为整数。\n"))
+    a = 1
+    if str1 % 2 != 0:
+        while True:
+            if (math.pow(10, a)-1) % str1 == 0:
+                print("输入的奇数为{0}，最少需要{1}个9除于该数的结果为整数。".format(str(str1), str(a)))
+                break
+            a += 1
+    else:
+        print("输入的数为{0}，不是奇数，不进行计算，请重新执行程序后输入奇数。".format(str(str1)))
 
 
 '''86、两个字符串连接程序。'''
 
 
 def test_exam_86():
-    pass
+    str1 = input("请输入第1个字符串。\n")
+    str2 = input("请输入第2个字符串，程序将这2个字符串进行连接并输出。\n")
+    a = str1 + str2
+    print(a)
 
 
-'''87、回答结果（结构体变量传递）。'''
+'''87、回答结果（结构体变量传递）。(没看明白，跟着题目模仿写代码)'''
+
+
+class students:
+    count = 0
+    score = 0
+
+
+def func(stu):
+    stu.count = 20
+    stu.score = 'c'
 
 
 def test_exam_87():
-    pass
+    a = students()
+    a.count = 3
+    a.score = 'b'
+    func(a)
+    print(a.count, a.score)
 
 
 '''88、读取7个数（1—50）的整数值，每读取一个值，程序打印出该值个数的＊。'''
 
 
 def test_exam_88():
-    pass
+    print("请依次输入7个数（1—50），每读取一个值，程序打印出该值个数的＊")
+    for i in range(7):
+        a = int(input("请输入第{0}个数：\n".format(str(i+1))))
+        for j in range(a):
+            print("＊", end="")
+        print()
 
 
 '''89、某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：每位数字都加上5,然后用和除以10的余数代替该数字，
@@ -1410,26 +1455,190 @@ def test_exam_88():
 
 
 def test_exam_89():
-    pass
+    str1 = input("请输入四位的整数，程序将输出加密之后的数。\n")
+    a = list(str1)
+    for i in range(len(a)):
+        a[i] = str((int(a[i]) + 5) % 10)
+    for i in range(int(len(a) / 2)):
+        t = a[i]
+        a[i] = a[len(a) -1 - i]
+        a[len(a) - 1 - i] = t
+    print("加密规则：每位数字都加上5,然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。输入的数字加密后输出如下：")
+    print("".join(a))
 
 
 '''90、列表使用实例。'''
 
 
 def test_exam_90():
-    pass
+    str1 = input("请输入一行字符串，程序将进行列表处理并输出。\n")
+    a = list(str1)
+    print("列表的长度为%d" % len(a))
+    print(a[1:])
+    print(a[-5:])
+    a.extend([1, 3, 5])
+    print(a)
+    a.pop(1)
+    print(a)
+    a.clear()
+    print(a)
 
 
 '''91、时间函数举例1。'''
+
+
+def test_exam_91():
+    localtime = time.localtime(time.time())
+    print("本地时间为：", localtime)
+    print("本地时间为：", time.asctime(localtime))
+
+
 '''92、时间函数举例2。'''
+
+
+def test_exam_92():
+    # 格式化成2021-01-17 11:45:39形式
+    print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+    # 格式化成Sat Mar 28 09:24:24 2021形式
+    print(time.strftime("%a %b %d %H:%M:%S %Y", time.localtime()))
+    # 将格式字符串转换为时间戳
+    a = "Sun Jan 17 10:59:09 2021"
+    print(time.mktime(time.strptime(a, "%a %b %d %H:%M:%S %Y")))
+
+
 '''93、时间函数举例3。'''
-'''94、时间函数举例4,一个猜数游戏，判断一个人反应快慢。'''
-'''95、字符串日期转换为易读的日期格式。'''
+
+
+def test_exam_93():
+    cal1 = calendar.month(2021, 1)
+    print("以下输出2021年1月份的日历：")
+    print(cal1)
+    # 判断是否闰年
+    print(calendar.isleap(2020))
+    time.sleep(3)
+    print(calendar.isleap(2021))
+
+
+'''94、时间函数举例4,一个猜数游戏，判断一个人反应快慢。(不会，跟着题目模仿写代码)'''
+
+
+def test_exam_94():
+    play = input("你想玩这个游戏么？（\'y\' 或者 \'n\'）\n")
+    while play == 'y':
+        # c = input("请输入一个字符：\n")
+        i = random.randint(0, 101)
+        # print("请输入你要猜的数：")
+        # start_time = time.clock()
+        a = time.time()
+        print(a)
+        guess = int(input("请输入你猜的数：\n"))
+        while guess != i:
+            if guess > i:
+                print("请输入一个更小的数：")
+                guess = int(input("请输入你猜的数：\n"))
+            else:
+                print("请输入一个更大的数：")
+                guess = int(input("请输入你猜的数：\n"))
+        # end_time = time.clock()
+        b = time.time()
+        print(b)
+        # var = (end_time - start_time) / 18.2
+        # print(var)
+        var = b - a
+        print('这次猜数游戏花费了你{:.2f}秒的时间。'.format(var))
+        if var < 15:
+            print("不错哟，15s内猜出来了！")
+        elif var < 25:
+            print("还可以，15-25s内猜出来了！")
+        else:
+            print("速度有点落后了，25s以上猜出来了！")
+        print("Congradulations, The number you guess is {0}".format(i))
+        play = input("你还想再次玩这个游戏么？（\'y\' 或者 \'n\'）\n")
+
+
+'''95、字符串日期转换为易读的日期格式。(跟着题目模仿写代码)'''
+
+
+def test_exam_95():
+    from dateutil import  parser
+    dt1 = parser.parse("Jan 17 2021 10:58AM")
+    print(dt1)
+
+
 '''96、计算字符串中子串出现的次数。'''
+
+
+def test_exam_96():
+    str1 = input("请输入一行字符串：\n")
+    str2 = input("请输入上面一行字符串的一部分，程序将计算该子串出现在上一行字符串中的次数：\n")
+    print("统计第一行字符串中全部字符出现的次数：")
+    print(Counter(str1))
+    print("统计第一行字符串中单个字符a出现的次数：")
+    print(str1.count('a'))
+    print("统计第一行字符串中第2行子串出现的次数：")
+    print(str1.count(str2))
+
+
 '''97、从键盘输入一些字符，逐个把它们写到磁盘文件上，直到输入一个 # 为止。'''
+
+
+def test_exam_97():
+    f = open("E:/testfile.txt", "w+")
+    print("请从键盘输入一些字符，逐个把它们写到磁盘文件上，直到输入一个 # 为止。")
+    while True:
+        a = input()
+        if a.find('#') != -1:
+            str1 = a[:a.index('#')]
+            f.write(str1)
+            break
+        else:
+            f.write(a)
+    f.close()
+
+
 '''98、从键盘输入一个字符串，将小写字母全部转换成大写字母，然后输出到一个磁盘文件"test"中保存。'''
+
+
+def test_exam_98():
+    str1 = input("请输入一行英文字母，程序将转换成大写后输出到磁盘文件test中。\n")
+    str2 = str1.upper()
+    print(str2)
+    f = open("E:/test.txt", "w+")
+    f.write(str2)
+    f.close()
+
+
 '''99、有两个磁盘文件A和B,各存放一行字母,要求把这两个文件中的信息合并(按字母顺序排列), 输出到一个新文件C中。'''
+
+
+def test_exam_99():
+    fa = open("E:/testA.txt", 'r')
+    a = list(fa.readline())
+    print(a)
+    fa.close()
+    fb = open("E:/testB.txt", 'r')
+    b = list(fb.readline())
+    print(b)
+    fb.close()
+    a.extend(b)
+    a.sort()
+    str1 = "".join(a)
+    print(str1)
+    fc = open("E:/testC.txt", "w+")
+    fc.write(str1)
+    fc.close()
+
+
 '''100、列表转换为字典。'''
+
+
+def test_exam_100():
+    a = [1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e']
+    dt = {}
+    for i in range(len(a)):
+        dt[str(i)] = a[i]
+    print(dt)
+
 
 if __name__ == '__main__':
     # test_exam_01()
@@ -1523,5 +1732,23 @@ if __name__ == '__main__':
     # test_exam_79()
     # test_exam_80()
     # test_exam_81()
-    test_exam_82()
-    test_exam_82x()
+    # test_exam_82()
+    # test_exam_82x()
+    # test_exam_83()
+    # test_exam_84()
+    # test_exam_85()
+    # test_exam_86()
+    # test_exam_87()
+    # test_exam_88()
+    # test_exam_89()
+    # test_exam_90()
+    # test_exam_91()
+    # test_exam_92()
+    # test_exam_93()
+    # test_exam_94()
+    # test_exam_95()
+    # test_exam_96()
+    # test_exam_97()
+    # test_exam_98()
+    # test_exam_99()
+    test_exam_100()
